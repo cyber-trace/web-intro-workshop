@@ -1,0 +1,31 @@
+{
+  "news": [
+    {
+      "id": "1",
+      "title": "title 1",
+      "date": "20/01/2022",
+      "content": "test test this is a content , blalbla",
+      "author": "1"
+    },
+    {
+      "id": "3",
+      "title": "title 1",
+      "date": "20/01/2022",
+      "content": "test test this is a content , blalbla",
+      "author": "1"
+    },
+    {
+      "id": "2",
+      "title": "title 1",
+      "date": "20/01/2022",
+      "content": "test test this is a content , blalbla",
+      "author": "1"
+    }
+  ],
+  "author": [
+    {
+      "id": "1",
+      "name": "mehdi"
+    }
+  ]
+}
