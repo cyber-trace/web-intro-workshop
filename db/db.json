@@ -1,0 +1,31 @@
+{
+  "news": [
+    {
+      "id": "1",
+      "title": "Title 1",
+      "date": "22/01/2022",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eveniet doloribus? Aliquid dolores voluptates repudiandae quos quibusdam architecto sunt, commodi autem veniam nemo corrupti cupiditate. Quae hic cumque dolor! Dolorum.",
+      "author": "1"
+    },
+    {
+      "id": "3",
+      "title": "Title 2",
+      "date": "21/01/2022",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eveniet doloribus? Aliquid dolores voluptates repudiandae quos quibusdam architecto sunt, commodi autem veniam nemo corrupti cupiditate. Quae hic cumque dolor! Dolorum.",
+      "author": "1"
+    },
+    {
+      "id": "2",
+      "title": "Title 3",
+      "date": "20/01/2022",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eveniet doloribus? Aliquid dolores voluptates repudiandae quos quibusdam architecto sunt, commodi autem veniam nemo corrupti cupiditate. Quae hic cumque dolor! Dolorum.",
+      "author": "1"
+    }
+  ],
+  "author": [
+    {
+      "id": "1",
+      "name": "mehdi"
+    }
+  ]
+}
