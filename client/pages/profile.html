@@ -26,24 +26,28 @@
     </nav>
     <section id="container">
       <section id="creation">
-        <form action="">
+        <form
+          onSubmit="return false; // Returning false stops the page from reloading"
+        >
           <h2 style="text-align: center">Add your post</h2>
           <div class="input-1">
             <label for="">Title </label>
-            <input type="text" />
+            <input type="text" id="title" />
           </div>
           <div class="input-1">
             <label for="">Description</label>
-            <textarea type="text" rows="6"></textarea>
+            <textarea type="text" rows="6" id="content"></textarea>
           </div>
           <div style="display: flex; justify-content: end">
-            <input type="button" value="Submit" id="submit-btn" />
+            <button type="submit" id="submit-btn">Submit</button>
+            <!-- <input type="button" value="Submit" id="submit-btn" /> -->
           </div>
         </form>
       </section>
       <section id="posts-personal">
         <h2>Your Articles</h2>
-        <div class="post-personal">
+        <div id="list-posts"></div>
+        <!-- <div class="post-personal">
           <h2>Title1</h2>
           <div id="btns">
             <i class="fa fa-pencil" aria-hidden="true" id="edit-btn"></i>
@@ -63,7 +67,7 @@
             <i class="fa fa-pencil" aria-hidden="true" id="edit-btn"></i>
             <i class="fa fa-trash" aria-hidden="true" id="delete-btn"></i>
           </div>
-        </div>
+        </div> -->
       </section>
     </section>
 
@@ -97,5 +101,7 @@
         </ul>
       </div>
     </footer>
+    <!-- <script src="/client/js/PostAPI.js" type="module"></script> -->
+    <script src="/client/js/profile.js" type="module"></script>
   </body>
 </html>

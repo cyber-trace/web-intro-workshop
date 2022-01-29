@@ -20,6 +20,12 @@
       "date": "20/01/2022",
       "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eveniet doloribus? Aliquid dolores voluptates repudiandae quos quibusdam architecto sunt, commodi autem veniam nemo corrupti cupiditate. Quae hic cumque dolor! Dolorum.",
       "author": "1"
+    },
+    {
+      "title": "my test",
+      "date": "Sat Jan 29 2022",
+      "content": "this is a test",
+      "id": "h950yCH"
     }
   ],
   "author": [

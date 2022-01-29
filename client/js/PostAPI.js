@@ -1,6 +1,6 @@
 const baseUrl = "http://localhost:8000/news";
 
-const addPost = async (post) => {
+export const addPost = async (post) => {
   const response = await fetch(`${baseUrl}`, {
     method: "POST",
     headers: {

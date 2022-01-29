@@ -88,3 +88,6 @@ input:focus {
   color: #2f3437;
   border: #2f3437 solid 1px;
 }
+#list-posts {
+  height: 100px;
+}
