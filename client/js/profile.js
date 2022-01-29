@@ -81,7 +81,6 @@ const setForm = async (post) => {
   submitBtn.innerHTML = "Update";
 
   submitBtn.id = "update-btn";
-  console.log({ "class btn": submitBtn.classList });
   //store post id
   submitBtn.setAttribute("data-id", post.id);
 };
@@ -96,15 +95,11 @@ const handleUpdate = async () => {
     content: content.value,
     id: id,
   };
-  console.log(newPost);
   const response = await editPost(newPost);
-  console.log(response.status);
 };
 
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(e.target.id);
-  console.log(e.target.id === "submit-btn");
   if (e.target.id == "submit-btn") handleCreate(e);
   else handleUpdate(newPost);
 });
@@ -136,13 +131,8 @@ const getPersonalPosts = async () => {
     listPosts.append(card);
     //adding event listeners
     postsElement[i].addEventListener("click", (e) => {
-      console.log(e.target.id);
-      if (e.target.id === "edit-btn") {
-        console.log("edit");
-        setForm(element);
-      } else if (e.target.id === "delete-btn") {
-        removePost(element.id);
-      }
+      if (e.target.id === "edit-btn") setForm(element);
+      else if (e.target.id === "delete-btn") removePost(element.id);
     });
   });
 };
