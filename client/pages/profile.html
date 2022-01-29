@@ -16,17 +16,18 @@
     <nav style="padding: 0 30px">
       <div>
         <img
-          src="/client/assets/img/Cyber.png"
+          src="../assets/img/Cyber.png"
           alt="cyber trace logo"
           id="nav-icon"
         />
       </div>
-      <div><a href="/">HOME </a></div>
-      <div><a href="/profile.html">Profile </a></div>
+      <div><a href="./home.html">Home </a></div>
+      <div><a href="#">Profile </a></div>
+      <button id="theme" value="light"><i class="far fa-moon"></i></button>
     </nav>
     <section id="container">
       <section id="creation">
-        <form action="">
+        <form action="" class="form">
           <h2 style="text-align: center">Add your post</h2>
           <div class="input-1">
             <label for="">Title </label>
@@ -43,25 +44,21 @@
       </section>
       <section id="posts-personal">
         <h2>Your Articles</h2>
-        <div class="post-personal">
-          <h2>Title1</h2>
-          <div id="btns">
-            <i class="fa fa-pencil" aria-hidden="true" id="edit-btn"></i>
-            <i class="fa fa-trash" aria-hidden="true" id="delete-btn"></i>
+        <div class="posts">
+          <div class="post-personal">
+            <h2>Title1</h2>
+            <div id="btns">
+              <i class="fa fa-pencil" aria-hidden="true" id="edit-btn"></i>
+              <i class="fa fa-trash" aria-hidden="true" id="delete-btn"></i>
+            </div>
           </div>
-        </div>
-        <div class="post-personal">
-          <h2>Title1</h2>
-          <div id="btns">
-            <i class="fa fa-pencil" aria-hidden="true" id="edit-btn"></i>
-            <i class="fa fa-trash" aria-hidden="true" id="delete-btn"></i>
-          </div>
-        </div>
-        <div class="post-personal">
-          <h2>Title1</h2>
-          <div id="btns">
-            <i class="fa fa-pencil" aria-hidden="true" id="edit-btn"></i>
-            <i class="fa fa-trash" aria-hidden="true" id="delete-btn"></i>
+
+          <div class="post-personal">
+            <h2>Title1</h2>
+            <div id="btns">
+              <i class="fa fa-pencil" aria-hidden="true" id="edit-btn"></i>
+              <i class="fa fa-trash" aria-hidden="true" id="delete-btn"></i>
+            </div>
           </div>
         </div>
       </section>
@@ -98,4 +95,5 @@
       </div>
     </footer>
   </body>
+  <script src="../../js/index.js"></script>
 </html>
