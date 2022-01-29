@@ -70,7 +70,8 @@ input:focus {
   color: #ff0000;
 }
 
-#submit-btn {
+#submit-btn,
+#update-btn {
   background-color: #2f3437;
   border: none;
   color: white;
@@ -83,7 +84,8 @@ input:focus {
   margin: 0.6em 0.7em;
 }
 
-#submit-btn:hover {
+#submit-btn:hover,
+#update-btn:hover {
   background-color: white;
   color: #2f3437;
   border: #2f3437 solid 1px;

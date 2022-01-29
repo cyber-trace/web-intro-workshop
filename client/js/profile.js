@@ -24,9 +24,19 @@ const addPost = async (post) => {
 };
 
 // api call to remove post
-const removePost = async (post) => {
-  const response = await fetch(`${baseUrl}`, {
+const removePost = async (i) => {
+  const response = await fetch(`${baseUrl}/${i}`, {
     method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return response.json();
+};
+//api call to edit post
+const editPost = async (post) => {
+  const response = await fetch(`${baseUrl}/${post.id}`, {
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
@@ -36,19 +46,19 @@ const removePost = async (post) => {
 };
 
 /********** CREATE API **********/
-const createPost = async (e) => {
+const handleCreate = async (e) => {
   e.preventDefault();
 
   const title = document.getElementById("title").value;
   const content = document.getElementById("content").value;
 
-  //   const errors = [];
-  //   if (title.length < 5) errors.push("Title must be at least 5 characters");
-  //   if (content.length < 5) errors.push("Content must be at least 5 characters");
-  //   if (errors.length > 0) {
-  //     alert(errors.join("\n"));
-  //     return;
-  //   }
+  const errors = [];
+  if (title.length < 5) errors.push("Title must be at least 5 characters");
+  if (content.length < 5) errors.push("Content must be at least 5 characters");
+  if (errors.length > 0) {
+    alert(errors.join("\n"));
+    return;
+  }
 
   const post = {
     title,
@@ -56,31 +66,60 @@ const createPost = async (e) => {
     content,
   };
   const response = await addPost(post);
-  console.log(response);
-  console.log("createPost");
-
-  //   if (response.status === 200) {
-  //     alert("Post created");
-  //     window.location.href = "/";
-  //   }
-  //   else alert("Error creating post");
 };
 
-const submitBtn = document.querySelector("#submit-btn");
+var submitBtn = document.querySelector("#submit-btn");
+
+const setForm = async (post) => {
+  let title = document.getElementById("title");
+  let content = document.getElementById("content");
+
+  title.value = post.title;
+  content.value = post.content;
+
+  //change submit button to update button
+  submitBtn.innerHTML = "Update";
+
+  submitBtn.id = "update-btn";
+  console.log({ "class btn": submitBtn.classList });
+  //store post id
+  submitBtn.setAttribute("data-id", post.id);
+};
+var newPost = {};
+const handleUpdate = async () => {
+  const id = submitBtn.getAttribute("data-id");
+  let title = document.getElementById("title");
+  let content = document.getElementById("content");
+
+  newPost = {
+    title: title.value,
+    content: content.value,
+    id: id,
+  };
+  console.log(newPost);
+  const response = await editPost(newPost);
+  console.log(response.status);
+};
+
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  createPost(e);
+  console.log(e.target.id);
+  console.log(e.target.id === "submit-btn");
+  if (e.target.id == "submit-btn") handleCreate(e);
+  else handleUpdate(newPost);
 });
 
 /********** GET API **********/
 let posts = [];
 const personalFeed = document.querySelector("#posts-personal");
 const listPosts = document.querySelector("#list-posts");
+const postsElement = document.getElementsByClassName("post-personal");
+
 const getPersonalPosts = async () => {
   const response = await getPosts();
-  console.log(response);
   posts = response;
-  posts.map((element) => {
+  //create elements
+  posts.map((element, i) => {
     const card = document.createElement("div");
     card.classList.add("post-personal");
     if (localStorage.getItem("theme") === "dark")
@@ -94,16 +133,17 @@ const getPersonalPosts = async () => {
             <i class="fa fa-pencil" aria-hidden="true" id="edit-btn"></i>
             <i class="fa fa-trash" aria-hidden="true" id="delete-btn"></i>
           </div>`;
-    // const date = document.createElement("p");
-    // date.innerHTML = element.date;
-    // date.classList.add("date");
-    // card.append(date);
-    // const content = document.createElement("p");
-    // content.innerHTML = element.content;
-    // content.classList.add("content");
-    // card.append(content);
-    console.log(card);
     listPosts.append(card);
+    //adding event listeners
+    postsElement[i].addEventListener("click", (e) => {
+      console.log(e.target.id);
+      if (e.target.id === "edit-btn") {
+        console.log("edit");
+        setForm(element);
+      } else if (e.target.id === "delete-btn") {
+        removePost(element.id);
+      }
+    });
   });
 };
 //get post of the current user
