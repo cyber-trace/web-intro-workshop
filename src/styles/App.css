@@ -1,0 +1,62 @@
+.App {
+  width: 300px;
+  padding: 10% 35%;
+  border-radius: 10px;
+}
+.container {
+  border: #2f3437 2px solid;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2f3437;
+  color: white;
+  padding: 10px 0;
+  gap: 10px;
+}
+#nav-icon {
+  width: 30px;
+  height: 30px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: #2f3437;
+}
+#footer-content {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.calculatrice {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5px 5px 10px 5px;
+  gap: 10px;
+}
+
+.nb-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 0px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: gainsboro;
+}
+.display {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px;
+}
+.result {
+  width: 75%;
+  height: 20px;
+  border: solid 2px darkgrey;
+  border-radius: 5px;
+}
